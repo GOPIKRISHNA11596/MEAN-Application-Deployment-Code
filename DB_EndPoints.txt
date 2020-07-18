@@ -1,0 +1,42 @@
+BackEnd Part - End points:
+==========================
+
+To Add a Book 		:  /books/add
+To get all books 	:  /books
+To get all book by ID 	:  /books/view/:id
+To delete a book by ID 	:  /books/delete/:id
+To delete a book by ID 	:  /books/delete/:id
+
+Database :
+==========
+Database Name 	: "Book"
+Collection Name : "books"
+
+{
+    "ID": 1,
+    "BookName": "Harry Potter",
+    "AuthorName": "J.K.Rowling",
+    "Catagory": "Novel",
+    "Price": "Rs.500"
+},
+{
+    "ID": 2,
+    "BookName": "Half Girlfriend",
+    "AuthorName": "Chetan Bhagat",
+    "Catagory": "Drama",
+    "Price": "Rs.750"
+},
+{
+    "ID": 3,
+    "BookName": "Three Idiots",
+    "AuthorName": "Chetan Bhagat",
+    "Catagory": "Love Story",
+    "Price": "Rs.1000"
+},
+{
+    "ID": 4,
+    "BookName": "RamuIsm",
+    "AuthorName": "Ram Gopal Varma",
+    "Catagory": "Complex Story",
+    "Price": "Rs.10"
+}

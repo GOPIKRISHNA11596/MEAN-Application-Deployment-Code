@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'books', component: BooksComponent },
   { path: 'books/:id', component: BookDetailComponent },
   { path: '', component: HomeComponent },
-  { path: '**', component: HomeComponent },
+  { path: '**', component: HomeComponent }
   ];
 
 @NgModule({

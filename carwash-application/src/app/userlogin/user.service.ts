@@ -3,46 +3,43 @@ import { HttpClient, HttpErrorResponse} from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, tap, map } from 'rxjs/operators';
 
-import { Book } from './book';
+import { User } from './user';
 
 @Injectable({
   providedIn: 'root'
 })
-
-export class BookService {
-  private bookUrl = 'assets/api/books/books.json';
-   //baseUri:string = 'http://localhost:3000';
-
+export class UserService {
+ // private userUrl = 'assets/api/books/books.json';
+  baseUri:string = 'http://localhost:3000';
 
   constructor(private http : HttpClient) { }
 
-  getBooks(): Observable<Book[]> {
-    //let url = `${this.baseUri}/books`;
-     return this.http.get<Book[]>(this.bookUrl).pipe(
-    //return this.http.get<Book[]>(url).pipe(
+  getUsers(): Observable<User[]> {
+    let url = `${this.baseUri}/users`;
+     //return this.http.get<Book[]>(this.userUrl).pipe(
+    return this.http.get<User[]>(url).pipe(
         tap(data => console.log('All: ' + JSON.stringify(data))),
         catchError(this.handleError)
       );
   }
 
-  getBook(id: number): Observable<Book | undefined> {
-    return this.getBooks()
+  getUser(id: string): Observable<User | undefined> {
+    return this.getUsers()
       .pipe(
-        map((books: Book[]) => books.find(p => p.ID === id))
+        map((books: User[]) => books.find(p => p.username === id))
       );
   }
 
-   addBook(book : Book[]): Observable<Book[]> {
-    //let url = `${this.baseUri}/books/add`;
-    let url = `${this.bookUrl}/books/add`;
+  addUser(user : User[]): Observable<User[]> {
+    let url = `${this.baseUri}/users/register`;
+    return this.http.post<User[]>(url, user);
 
-
-    return this.http.post<Book[]>(url, book);
-    // .pipe(
-    //    tap((book:Book) => console.log('Added successfully : '+book.ID)),
-    //    catchError(this.handleError)
-    //  );
  }
+
+ authentication(user : User[]): Observable<User[]> {
+  let url = `${this.baseUri}/users/authenticate`;
+  return this.http.post<User[]>(url, user);
+}
 
 
   private handleError(err: HttpErrorResponse) {
@@ -55,6 +52,4 @@ export class BookService {
     console.error(errorMessage);
     return throwError(errorMessage);
   }
-
-
 }

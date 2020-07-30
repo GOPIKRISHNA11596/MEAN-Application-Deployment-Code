@@ -1,0 +1,40 @@
+
+
+{
+    "username" : "gopibn",
+    "password": "password",
+    "firstName": "Gopikrishna",
+    "lastName": "B N"
+},
+{
+    "username" : "ikalyan",
+    "password": "ikalyan",
+    "firstName": "Pawan Kalyan",
+    "lastName": "Immadi"
+},
+{
+    "username" : "akswamy",
+    "password": "akswamy",
+    "firstName": "Akshay Kumar",
+    "lastName": "Swamy"
+},
+{
+    "username" : "ramiredd",
+    "password": "ramiredd",
+    "firstName": "Rami Reddy",
+    "lastName": "Kancherla"
+},
+{
+    "username" : "krish",
+    "password": "krish",
+    "firstName": "Krishna",
+    "lastName": "Reddy"
+}
+  
+
+//For Authentication
+{
+    "username" : "gopibn",
+    "password": "password"
+}
+
